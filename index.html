@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+        <meta name="format-detection" content="telephone=no" />
+        <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height, target-densitydpi=device-dpi" />
+
+        <!-- // <script src="http://debug.phonegap.com/target/target-script-min.js#mnbh76567jhjhk"></script> -->
+
+        <script type="text/javascript" src="phonegap.js"></script>
+
+        <link rel="stylesheet" href="http://code.jquery.com/mobile/1.3.0/jquery.mobile-1.3.0.min.css" />
+        <script src="http://code.jquery.com/jquery-1.8.2.min.js"></script>
+        <script src="http://code.jquery.com/mobile/1.3.0/jquery.mobile-1.3.0.min.js"></script>
+        <script src="components/knockout/build/output/knockout-latest.js"></script>
+        <script src="components/moment/min/moment.min.js"></script>
+        
+        <script type="text/javascript" src="js/model.js"></script>
+        <script type="text/javascript" src="js/main.js"></script>
+        <link rel="stylesheet" type="text/css" href="css/main.css" />
+
+        <title>Pomodoro</title>
+    </head>
+    <body>
+
+        <div data-role="page" id="work">
+          <div data-role="header">
+            <h1>Pomodoro</h1>
+            <div data-role="navbar">
+              <ul>
+                <li><a href="#work" data-transition="none">Work</a></li>
+                <li><a href="#stats" data-transition="none">History & stats</a></li>
+              </ul>
+            </div>
+          </div>
+          <div data-role="content">
+            <a href="#pomodoro" data-role="button" data-transition="slide">Begin pomodoro</a>
+          </div>
+        </div>
+
+        <div data-role="page" id="pomodoro" class="fullscreen-enabled">
+          <div data-role="content" class="fullscreen-enabled">
+            <div id="begin_pomodoro" data-bind="click: switch_mode, attr: { class: mode }">
+                <div class="middle-text" data-bind="text: instruction, visible: mode() == 'off'"></div>
+                <div class="middle-text" data-bind="text: remaining_time, visible: mode() != 'off'"></div>
+            </div>
+          </div>
+        </div>
+        
+    </body>
+</html>
